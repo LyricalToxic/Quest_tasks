@@ -1,0 +1,4 @@
+use quest;
+select * from products where products.id in (select products_id from tags group by products_id having count(*)>10)
+
+Для связи двух бд я создал  поле в таблице tags.products_id которое является внешним ключем и ссылается на product.id
